@@ -1,22 +1,18 @@
 #include<stdio.h>
 #include<string.h>
-int main()
-{
-	int i,j,len;
-	char s[100];
-	gets(s);
-	len=strlen(s);
-	for(i=0;i<len;i=i+2);
-	{
-		for(j=i+2;j<len;j=j+2)
-		{
-			if(s[j]>s[i])
-			{
-				char temp=s[i];
-				s[i]=s[j];
-				s[j]=s[i];
+int main(){
+	char a[100];
+	scanf("%s",a);
+	int i,j,temp;
+	for(i=0;i<strlen(a);i=i+2){
+		for(j=i+2;j<strlen(a);j=j+2){
+			if(a[i]>a[j]){
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
 			}
 		}
 	}
-	printf("%s",s);
+	printf("%s",a);
+	return 0;
 }
